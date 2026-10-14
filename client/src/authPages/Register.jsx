@@ -18,7 +18,7 @@ function Register() {
   };
 
   return (
-    <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow">
+    <div className="mx-auto max-w-md rounded-lg border bg-surface p-6 shadow">
       <h1 className="mb-6 text-2xl font-bold">Create an account</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -28,7 +28,7 @@ function Register() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full rounded-md border px-3 py-2"
+          className="w-full rounded-md border border-line bg-surface px-3 py-2 text-foreground placeholder:text-muted"
         />
         <input
           type="email"
@@ -37,7 +37,7 @@ function Register() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full rounded-md border px-3 py-2"
+          className="w-full rounded-md border border-line bg-surface px-3 py-2 text-foreground placeholder:text-muted"
         />
         <input
           type="password"
@@ -47,7 +47,7 @@ function Register() {
           onChange={handleChange}
           required
           minLength={8}
-          className="w-full rounded-md border px-3 py-2"
+          className="w-full rounded-md border border-line bg-surface px-3 py-2 text-foreground placeholder:text-muted"
         />
         <button
           type="submit"
@@ -56,9 +56,9 @@ function Register() {
           Register
         </button>
       </form>
-      <p className="mt-4 text-sm text-gray-600">
+      <p className="mt-4 text-sm text-muted">
         Already have an account?{" "}
-        <Link to="/login" className="text-blue-600 hover:underline">
+        <Link to="/login" className="text-primary hover:underline">
           Login
         </Link>
       </p>

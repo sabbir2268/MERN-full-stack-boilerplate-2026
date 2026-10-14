@@ -3,12 +3,12 @@ import { PATHS } from "../routes/paths";
 
 const linkClass = ({ isActive }) =>
   `px-3 py-2 rounded-md text-sm font-medium ${
-    isActive ? "bg-blue-600 text-white" : "text-gray-700 hover:bg-gray-200"
+    isActive ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-hover"
   }`;
 
 function Navbar() {
   return (
-    <header className="border-b bg-white">
+    <header className="border-b bg-surface">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
         <Link to="/" className="text-lg font-bold text-blue-600">
           MERN Boilerplate

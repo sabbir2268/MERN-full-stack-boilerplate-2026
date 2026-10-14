@@ -14,7 +14,7 @@ function Login() {
   };
 
   return (
-    <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow">
+    <div className="mx-auto max-w-md rounded-lg border bg-surface p-6 shadow">
       <h1 className="mb-6 text-2xl font-bold">Login</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
@@ -24,7 +24,7 @@ function Login() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full rounded-md border px-3 py-2"
+          className="w-full rounded-md border border-line bg-surface px-3 py-2 text-foreground placeholder:text-muted"
         />
         <input
           type="password"
@@ -33,7 +33,7 @@ function Login() {
           value={formData.password}
           onChange={handleChange}
           required
-          className="w-full rounded-md border px-3 py-2"
+          className="w-full rounded-md border border-line bg-surface px-3 py-2 text-foreground placeholder:text-muted"
         />
         <button
           type="submit"
@@ -42,9 +42,9 @@ function Login() {
           Login
         </button>
       </form>
-      <p className="mt-4 text-sm text-gray-600">
+      <p className="mt-4 text-sm text-muted">
         No account?{" "}
-        <Link to="/register" className="text-blue-600 hover:underline">
+        <Link to="/register" className="text-primary hover:underline">
           Register
         </Link>
       </p>

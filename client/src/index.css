@@ -20,6 +20,7 @@
   --color-foreground: var(--fg);
   --color-muted: var(--muted);
   --color-hover: var(--hover);
+  --color-line: var(--line);
   --color-primary: var(--brand);
   --color-primary-hover: var(--brand-hover);
   --color-primary-foreground: var(--brand-fg);
