@@ -1,4 +1,8 @@
-import { initializeApp, getApp, getApps } from 'firebase/app';
+// create project in firebase console 
+// register your app in firebase console and add the config values to .env file
+// copy firebase 
+
+import { initializeApp} from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -10,30 +14,5 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-// These values are the minimum Firebase needs to start
-const REQUIRED_KEYS = ['apiKey', 'authDomain', 'projectId', 'appId'];
-
-export const isFirebaseConfigured = REQUIRED_KEYS.every((key) =>
-  Boolean(firebaseConfig[key]),
-);
-
-let app = null;
-let auth = null;
-
-if (isFirebaseConfigured) {
-  try {
-    // Reuse the existing app if hot reload runs this file twice
-    app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-    auth = getAuth(app);
-  } catch (error) {
-    app = null;
-    auth = null;
-    if (import.meta.env.DEV) {
-      console.warn('Firebase failed to initialize:', error.message);
-    }
-  }
-} else if (import.meta.env.DEV) {
-  console.warn('Firebase is not configured. Copy .env.example to .env to enable it.');
-}
-
-export { app, auth };
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
