@@ -7,6 +7,8 @@ import PrivateRoute from "../routes/PrivateRoute";
 import Login from "../features/auth/pages/Login";
 import Register from "../features/auth/pages/Register";
 import About from "../features/about/pages/About";
+import ButtonsPage from "../features/ui/pages/Buttons";
+import LoaderPage from "../features/ui/pages/Loader";
 
 export const router = createBrowserRouter([
   // Public pages: no authentication required
@@ -16,6 +18,8 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
+      { path: "buttons", element: <ButtonsPage /> },
+      { path: "loader", element: <LoaderPage /> },
     ],
   },
 
