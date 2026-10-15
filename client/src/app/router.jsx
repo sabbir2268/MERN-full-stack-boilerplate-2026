@@ -2,28 +2,38 @@ import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import Home from "../features/home/pages/Home";
 import NotFound from "../pages/NotFound";
-import AuthLayout from "./layouts/AuthLayout";
+import PublicRoute from "../routes/PublicRoute";
+import PrivateRoute from "../routes/PrivateRoute";
 import Login from "../features/auth/pages/Login";
 import Register from "../features/auth/pages/Register";
-import { PATHS } from "../utils/paths";
 import About from "../features/about/pages/About";
 
 export const router = createBrowserRouter([
+  // Public pages: no authentication required
   {
     path: "/",
     element: <AppLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: PATHS.ABOUT, element: <About /> },
-      { path: "*", element: <NotFound /> },
+      { path: "about", element: <About /> },
     ],
   },
+
+  // Guest-only pages
   {
-    path: "/auth",
-    element: <AuthLayout />,
+    element: <PublicRoute />,
     children: [
-      { path: PATHS.LOGIN, element: <Login /> },
-      { path: PATHS.REGISTER, element: <Register /> },
+      { path: "/login", element: <Login /> },
+      { path: "/register", element: <Register /> },
     ],
   },
+
+  // Protected pages
+  {
+    element: <PrivateRoute />,
+    children: [],
+  },
+
+  // Fallback
+  { path: "*", element: <NotFound /> },
 ]);
