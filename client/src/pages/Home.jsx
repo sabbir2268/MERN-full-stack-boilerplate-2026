@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PATHS } from "../routes/paths";
+import { PATHS } from "../utils/paths";
 
 // Replace with your real repository URL
 const GITHUB_URL = "https://github.com/your-username/your-repo";
@@ -107,10 +107,16 @@ function Home() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link
+            to={PATHS.LOGIN}
+            className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground hover:bg-primary-hover"
+          >
+            Login
+          </Link>
+          <Link
             to={PATHS.REGISTER}
             className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground hover:bg-primary-hover"
           >
-            Try the auth flow
+            Register
           </Link>
           <a
             href={GITHUB_URL}

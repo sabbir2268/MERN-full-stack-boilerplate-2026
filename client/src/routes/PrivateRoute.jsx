@@ -1,8 +1,8 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import { PATHS } from "../routes/paths";
+import { PATHS } from "../utils/paths";
 
-function ProtectedRoute() {
+function PrivateRoute() {
   const { isAuthenticated } = useAuth();
   const location = useLocation();
 
@@ -14,4 +14,4 @@ function ProtectedRoute() {
   return <Outlet />;
 }
 
-export default ProtectedRoute;
+export default PrivateRoute;

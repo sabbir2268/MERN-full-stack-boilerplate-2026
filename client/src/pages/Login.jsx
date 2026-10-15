@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { PATHS } from "../utils/paths";
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -44,7 +45,7 @@ function Login() {
       </form>
       <p className="mt-4 text-sm text-muted">
         No account?{" "}
-        <Link to="/register" className="text-primary hover:underline">
+        <Link to={PATHS.REGISTER} className="text-primary hover:underline">
           Register
         </Link>
       </p>

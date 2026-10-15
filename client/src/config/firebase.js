@@ -1,6 +1,3 @@
-// create project in firebase console 
-// register your app in firebase console and add the config values to .env file
-// copy firebase 
 
 import { initializeApp} from 'firebase/app';
 import { getAuth } from 'firebase/auth';

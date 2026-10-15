@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { PATHS } from "../routes/paths";
+import { PATHS } from "../utils/paths";
 
 const linkClass = ({ isActive }) =>
   `px-3 py-2 rounded-md text-sm font-medium ${
