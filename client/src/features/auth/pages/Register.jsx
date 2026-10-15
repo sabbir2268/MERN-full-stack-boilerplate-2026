@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { PATHS } from "../utils/paths";
+import { PATHS } from "../../../utils/paths";
 
 function Register() {
   const [formData, setFormData] = useState({

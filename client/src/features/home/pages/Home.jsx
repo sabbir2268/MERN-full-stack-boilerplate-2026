@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { PATHS } from "../utils/paths";
+import { PATHS } from "../../../utils/paths";
 
 // Replace with your real repository URL
 const GITHUB_URL = "https://github.com/your-username/your-repo";
