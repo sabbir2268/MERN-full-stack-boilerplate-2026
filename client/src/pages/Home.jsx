@@ -37,7 +37,7 @@ const FEATURES = [
       "React Router v7 with createBrowserRouter",
       "Main and auth layouts",
       "Route constants in one file",
-      "Home, About, Login, Register, and 404 pages",
+      "Home, About, Login, Register, Forgot password, Social login, and 404 pages",
     ],
   },
   {
@@ -46,6 +46,7 @@ const FEATURES = [
       "AuthProvider, AuthContext, and useAuth hook",
       "ProtectedRoute that remembers where you came from",
       "Login and Register forms with controlled inputs",
+      "Forgot password and social login pages exist as placeholders",
     ],
   },
   {
@@ -61,19 +62,15 @@ const FEATURES = [
     items: [
       "Navbar with active-link styling",
       "Footer",
+      "Buttons component for reuse across the site",
       ".env.example with Firebase, API, payment, and image-upload placeholders",
     ],
   },
 ];
 
 const ROADMAP = [
-  "Express + MongoDB backend",
-  "Real API calls and persisted sessions",
   "Social login buttons (Firebase auth is already initialized)",
-  "Stripe payments (env placeholder only)",
-  "ImgBB image upload (env placeholder only)",
   "Dashboard page, and wiring ProtectedRoute into the router",
-  "Forgot password and social login pages (placeholders exist)",
 ];
 
 const QUICK_START = `git clone <your-repo-url>
