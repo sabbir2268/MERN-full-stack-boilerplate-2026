@@ -6,6 +6,8 @@ const linkClass = ({ isActive }) =>
     isActive ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-hover"
   }`;
 
+  
+
 function Navbar() {
   return (
     <header className="border-b bg-surface">

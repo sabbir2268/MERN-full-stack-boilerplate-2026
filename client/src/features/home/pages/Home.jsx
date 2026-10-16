@@ -13,58 +13,33 @@ const TECH = [
   "ESLint 10",
 ];
 
-const FEATURES = [
-  {
-    title: "Routing & layouts",
-    items: [
-      "React Router v7 with createBrowserRouter",
-      "Public, guest-only, and protected route groups",
-      "Main and auth layouts with Outlet",
-      "Route constants in one place (utils/paths)",
-    ],
-  },
-  {
-    title: "Authentication",
-    items: [
-      "AuthProvider + AuthContext + useAuth hook",
-      "PublicRoute redirects logged-in users away from login/register",
-      "PrivateRoute guards dashboard/profile routes",
-      "Firebase auth instance ready to use",
-    ],
-  },
-  {
-    title: "Styling & theme",
-    items: [
-      "Tailwind CSS v4",
-      "Light, dark, and system themes",
-      "Semantic tokens: bg-surface, text-foreground, text-primary",
-      "No-flash theme script in index.html",
-    ],
-  },
-  {
-    title: "API & services",
-    items: [
-      "src/services/api.js fetch wrapper",
-      "Base URL from VITE_API_URL env var",
-      "Bearer token helpers (setAuthToken / clearAuthToken)",
-      "Demo users, posts, and auth endpoints",
-    ],
-  },
-  {
-    title: "Components",
-    items: [
-      "Navbar with active-link styling",
-      "Footer",
-      "Buttons component",
-      "Loader component",
-    ],
-  },
+const WHY_USE = [
+  "Save setup time",
+  "Follow a consistent folder structure",
+  "Build maintainable, scalable applications",
+  "Reuse your foundation across projects",
 ];
 
-const ROADMAP = [
-  "Dashboard and Profile pages wired into PrivateRoute",
-  "Forgot password and social login pages",
-  "Connect api.js endpoints to a real backend",
+const WHATS_INCLUDED = [
+  "React + Vite with JavaScript",
+  "Routing, layouts and route guards",
+  "Axios API client and optional Firebase Auth",
+  "Tailwind CSS, CSS Modules and reusable components",
+  "Linting, formatting and testing tools",
+];
+
+const GET_STARTED = [
+  "Create a repository from this template",
+  "Install dependencies with npm install",
+  "Configure environment variables",
+  "Run npm run dev and start building",
+];
+
+const WORKFLOW = [
+  "Add or remove features as needed",
+  "Connect your own backend API",
+  "Enable Firebase authentication when needed",
+  "Customize layouts, themes and design",
 ];
 
 const QUICK_START = `git clone <your-repo-url>
@@ -93,7 +68,7 @@ function Home() {
           React Frontend Boilerplate 2026
         </span>
         <h1 className="mt-4 text-4xl font-bold sm:text-5xl text-foreground">
-          Ready-to-use React frontend starter
+          Ready-to-use React starter kit
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-muted">
           A clean, themeable client template with routing, auth state, API
@@ -101,18 +76,7 @@ function Home() {
           idea, and ship.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Link
-            to={PATHS.LOGIN}
-            className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground hover:bg-primary-hover transition-colors"
-          >
-            Login
-          </Link>
-          <Link
-            to={PATHS.REGISTER}
-            className="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground hover:bg-primary-hover transition-colors"
-          >
-            Register
-          </Link>
+          
           <a
             href={GITHUB_URL}
             target="_blank"
@@ -139,29 +103,74 @@ function Home() {
         </ul>
       </section>
 
-      {/* 3. What's included */}
+      {/* 3. Why use this template */}
       <section>
-        <SectionHeading title="What's included" subtitle="Works out of the box" />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map(({ title, items }) => (
-            <article key={title} className="rounded-lg border border-line bg-surface p-5">
-              <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted">
-                {items.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span aria-hidden="true" className="text-primary">
-                      ✓
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+        <SectionHeading
+          title="Why use this template?"
+          subtitle="Start building features instead of configuring the same tools for every new project."
+        />
+        <ul className="mx-auto max-w-2xl space-y-2 text-sm text-muted">
+          {WHY_USE.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span aria-hidden="true" className="text-primary">
+                ✓
+              </span>
+              <span>{item}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
-      {/* 4. Quick start */}
+      {/* 4. What's included */}
+      <section>
+        <SectionHeading
+          title="What's included?"
+          subtitle="Everything you need to establish a clean React development workflow."
+        />
+        <ul className="mx-auto max-w-2xl space-y-2 text-sm text-muted">
+          {WHATS_INCLUDED.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span aria-hidden="true" className="text-primary">
+                ✓
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* 5. How to get started */}
+      <section>
+        <SectionHeading
+          title="How to get started"
+          subtitle="Create your own project from the GitHub template in minutes."
+        />
+        <ol className="mx-auto max-w-2xl space-y-2 text-sm text-muted list-decimal list-inside">
+          {GET_STARTED.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ol>
+      </section>
+
+      {/* 6. Built for your workflow */}
+      <section>
+        <SectionHeading
+          title="Built for your workflow"
+          subtitle="Keep the foundation reusable while adapting it to each project's requirements."
+        />
+        <ul className="mx-auto max-w-2xl space-y-2 text-sm text-muted">
+          {WORKFLOW.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span aria-hidden="true" className="text-primary">
+                ✓
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* 7. Quick start */}
       <section>
         <SectionHeading
           title="Quick start"
@@ -174,22 +183,6 @@ function Home() {
           On Windows PowerShell, use <code>copy</code> instead of{" "}
           <code>cp</code>.
         </p>
-      </section>
-
-      {/* 5. Roadmap */}
-      <section>
-        <SectionHeading
-          title="On the roadmap"
-          subtitle="Coming next — help us build it."
-        />
-        <ul className="mx-auto max-w-2xl space-y-2 rounded-lg border border-dashed border-line bg-surface p-5 text-sm text-muted">
-          {ROADMAP.map((item) => (
-            <li key={item} className="flex gap-2">
-              <span aria-hidden="true">○</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
       </section>
     </div>
   );
